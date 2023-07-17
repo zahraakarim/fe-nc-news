@@ -15,6 +15,7 @@ const ArticleList = () => {
       {articles.map((article) => {
         const topic = article.topic;
         const capitalisedTopic = topic.charAt(0).toUpperCase() + topic.slice(1);
+
         return (
           <div className="article-card">
             <li key={article.article_id}>
