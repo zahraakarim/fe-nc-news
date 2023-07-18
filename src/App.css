@@ -135,6 +135,7 @@ body {
 .comments-header {
   color: white;
   text-decoration: underline;
+  text-align: center;
 }
 
 .comments-list {
@@ -145,6 +146,11 @@ body {
   margin-top: auto;
   margin-bottom: 13px;
   margin-left: -40px;
+}
+
+.no-comments {
+  color: white;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {

@@ -17,7 +17,7 @@ const ArticleCard = () => {
   }, []);
 
   if (isLoading) {
-    return <p className="loading">Loading...</p>;
+    return <p className="loading">Loading Article...</p>;
   }
 
   return (
