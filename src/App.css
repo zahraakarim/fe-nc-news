@@ -18,9 +18,18 @@ li {
 
 .article-card {
   border: 7px solid;
-  padding: 3px;
+  padding: 20px;
   margin-top: auto;
   margin-bottom: 13px;
+  color: white;
+}
+
+.article-container {
+  color: white;
+}
+
+.article-container:hover {
+  color: white;
 }
 
 .article-title {
@@ -121,4 +130,32 @@ body {
 .loading {
   color: white;
   font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  #article-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #article-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #article-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #article-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
