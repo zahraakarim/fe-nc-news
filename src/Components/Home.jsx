@@ -11,13 +11,13 @@ const Home = () => {
       <form action="#!" id="main">
         <h2>Login to your account</h2>
 
-        <div class="input-parent">
-          <label for="username">Username or Email</label>
+        <div className="input-parent">
+          <label htmlFor="username">Username or Email</label>
           <input type="text" id="username" />
         </div>
 
-        <div class="input-parent">
-          <label for="password">Password</label>
+        <div className="input-parent">
+          <label htmlFor="password">Password</label>
           <input type="password" id="password" />
         </div>
 
