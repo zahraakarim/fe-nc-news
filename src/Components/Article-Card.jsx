@@ -10,7 +10,6 @@ const ArticleCard = () => {
 
   useEffect(() => {
     getArticle(article_id).then((data) => {
-      console.log(data);
       setArticle(data);
       setIsLoading(false);
     });
