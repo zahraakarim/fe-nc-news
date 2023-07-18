@@ -117,3 +117,8 @@ body {
 #login {
   color: black;
 }
+
+.loading {
+  color: white;
+  font-size: 24px;
+}

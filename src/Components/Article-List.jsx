@@ -8,13 +8,13 @@ const ArticleList = () => {
 
   useEffect(() => {
     getAllArticles().then((data) => {
-      setIsLoading(false);
       setArticles(data);
+      setIsLoading(false);
     });
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (
