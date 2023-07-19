@@ -11,7 +11,6 @@ const Votes = ({ startingVotes, article_id }) => {
     });
     patchVotes(article_id, voteCount).catch((err) => {
       setError(err);
-      console.log(err);
       setVotes(startingVotes);
     });
   };

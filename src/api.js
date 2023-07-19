@@ -23,7 +23,6 @@ export const getComments = (article_id) => {
 };
 
 export const patchVotes = (article_id, vote) => {
-  console.log(article_id);
   return ncNews
     .patch(`/articles/${article_id}`, { inc_votes: vote })
     .then(({ data }) => {
