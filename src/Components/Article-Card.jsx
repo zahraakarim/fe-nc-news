@@ -3,6 +3,7 @@ import { getArticle } from "../api";
 import { capitalisedTopic, dateFormatter } from "../util";
 import { useParams } from "react-router-dom";
 import Comments from "./Comments";
+import Votes from "./Votes";
 
 const ArticleCard = () => {
   const [article, setArticle] = useState({});
@@ -19,7 +20,6 @@ const ArticleCard = () => {
   if (isLoading) {
     return <p className="loading">Loading Article...</p>;
   }
-
   return (
     <section>
       <div className="article-card">
@@ -32,7 +32,7 @@ const ArticleCard = () => {
         <p>{article.body}</p>
         <p>Author: {article.author}</p>
         <p>Posted: {dateFormatter(article.created_at)}</p>
-        <p>Votes: {article.votes}</p>
+        <Votes startingVotes={article.votes} article_id={article_id} />
       </div>
       <Comments article_id={article_id} />
     </section>
