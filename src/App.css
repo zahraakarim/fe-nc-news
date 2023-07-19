@@ -36,6 +36,20 @@ li {
   text-decoration: underline;
 }
 
+.voting-container {
+  display: grid;
+}
+
+.vote-for-article {
+  padding: 0%;
+  background-color: #1c1b1b;
+}
+
+#error-message {
+  border: 2px solid;
+  padding: 1rem;
+}
+
 .nav {
   display: flex;
   gap: 1em;

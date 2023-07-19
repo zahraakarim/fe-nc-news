@@ -21,3 +21,11 @@ export const getComments = (article_id) => {
     return data.comments;
   });
 };
+
+export const patchVotes = (article_id, vote) => {
+  return ncNews
+    .patch(`/articles/${article_id}`, { inc_votes: vote })
+    .then(({ data }) => {
+      return data.article;
+    });
+};
