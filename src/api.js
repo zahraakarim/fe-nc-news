@@ -30,10 +30,13 @@ export const patchVotes = (article_id, vote) => {
     });
 };
 
-/*export const postComment = (article_id, newComment) => {
+export const PostCommentsById = (article_id, body, username) => {
   return ncNews
-    .post(`/articles/${article_id}/comments`, { text: newComment })
+    .post(`/articles/${article_id}/comments`, {
+      username: username,
+      body: body,
+    })
     .then(({ data }) => {
       return data.comment;
     });
-}; */
+};
