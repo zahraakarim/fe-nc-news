@@ -9,16 +9,25 @@ const PostComments = ({ setComments }) => {
   const { article_id } = useParams();
   const username = user;
   const [hasBeenClicked, sethasBeenClicked] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     sethasBeenClicked(true);
-    PostCommentsById(article_id, newComment, username).then((comment) => {
-      setNewComment("");
-      setComments((allComments) => {
-        return [comment, ...allComments];
+    PostCommentsById(article_id, newComment, username)
+      .then((comment) => {
+        setNewComment("");
+        setError(null);
+        setComments((allComments) => {
+          return [comment, ...allComments];
+        });
+      })
+      .catch((err) => {
+        sethasBeenClicked(false);
+        setError(err);
+        const button = document.getElementById("post-btn");
+        button.textContent = "Try again!";
       });
-    });
   };
 
   const handleClick = () => {
@@ -47,6 +56,7 @@ const PostComments = ({ setComments }) => {
           <button id="post-btn" onClick={handleClick} disabled={hasBeenClicked}>
             Post comment
           </button>
+          {error ? <h4 id="error-message">{error.message}</h4> : null}
         </form>
       </section>
     </div>
@@ -54,3 +64,9 @@ const PostComments = ({ setComments }) => {
 };
 
 export default PostComments;
+
+/*<button>{ hasClicked? (isError? <p>Something went wrong!<p> : <p>Comment posted!<p>) : <p>Post your comment! <p>}<button></button>
+
+<button id="post-btn" onClick={handleClick} disabled={hasBeenClicked}>
+
+</button> */
