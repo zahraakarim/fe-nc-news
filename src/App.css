@@ -201,6 +201,31 @@ body {
   width: auto;
 }
 
+.topic-list {
+  line-height: 1;
+  color: white;
+}
+
+.topic-card {
+  border: 7px solid;
+  padding: 20px;
+  margin-top: auto;
+  margin-bottom: 13px;
+  color: white;
+}
+
+.topic-container {
+  color: white;
+}
+
+.topic-container:hover {
+  color: white;
+}
+
+.topic-topic {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 600px) {
   #article-image {
     max-width: 100%;

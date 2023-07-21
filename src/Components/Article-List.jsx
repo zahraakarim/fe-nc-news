@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { getAllArticles } from "../api";
 import { capitalisedTopic, dateFormatter } from "../util";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { topic } = useParams();
 
   useEffect(() => {
-    getAllArticles().then((data) => {
+    getAllArticles(topic).then((data) => {
       setArticles(data);
       setIsLoading(false);
     });

@@ -4,10 +4,14 @@ const ncNews = axios.create({
   baseURL: "https://news-api-br7i.onrender.com/api",
 });
 
-export const getAllArticles = () => {
-  return ncNews.get("/articles").then(({ data }) => {
-    return data.articles;
-  });
+export const getAllArticles = (topic) => {
+  return ncNews
+    .get("/articles", {
+      params: { topic: topic },
+    })
+    .then(({ data }) => {
+      return data.articles;
+    });
 };
 
 export const getArticle = (article_id) => {
@@ -39,4 +43,10 @@ export const PostCommentsById = (article_id, body, username) => {
     .then(({ data }) => {
       return data.comment;
     });
+};
+
+export const getAllTopics = () => {
+  return ncNews.get("/topics").then(({ data }) => {
+    return data.topics;
+  });
 };
