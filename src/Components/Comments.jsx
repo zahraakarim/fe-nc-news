@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../api";
 import { dateFormatter } from "../util";
+import PostComments from "./Post-Comment";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
@@ -18,6 +19,7 @@ const Comments = () => {
   return (
     <section>
       <h3 className="comments-header">Comments</h3>
+      <PostComments article_id={article_id} setComments={setComments} />
       <ul>
         {isLoading ? <p>Loading comments...</p> : null}
         {comments.length === 0 ? (
