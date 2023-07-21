@@ -5,6 +5,7 @@ import Header from "./Components/Header";
 import NavBar from "./Components/Nav-Bar";
 import Home from "./Components/Home";
 import ArticleCard from "./Components/Article-Card";
+import Topics from "./Components/Topics";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           path="/articles/:article_id/comments"
           element={<ArticleCard />}
         />
+        <Route path="/topics" element={<Topics />} />
+        <Route path="/topics/:topic" element={<ArticleList />} />
       </Routes>
     </div>
   );
